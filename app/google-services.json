@@ -1,0 +1,166 @@
+{
+  "project_info": {
+    "project_number": "650781237894",
+    "firebase_url": "https://practice-40829.firebaseio.com",
+    "project_id": "practice-40829",
+    "storage_bucket": "practice-40829.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650781237894:android:f60dbb426d862f82",
+        "android_client_info": {
+          "package_name": "com.example.syed.practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650781237894-c4v4kovcbmi9ad306b42ocseo212onkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWLPISoxA16n2PLqt9tLoKyP-FF2H_Ce0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650781237894:android:904b3f92471a4539",
+        "android_client_info": {
+          "package_name": "com.ashraf.practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650781237894-c4v4kovcbmi9ad306b42ocseo212onkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWLPISoxA16n2PLqt9tLoKyP-FF2H_Ce0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650781237894:android:de807b58489d6b9a",
+        "android_client_info": {
+          "package_name": "com.ashraf.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650781237894-c4v4kovcbmi9ad306b42ocseo212onkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWLPISoxA16n2PLqt9tLoKyP-FF2H_Ce0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650781237894:android:4ef1775fb5918d69",
+        "android_client_info": {
+          "package_name": "com.ashraf.responsiveui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650781237894-c4v4kovcbmi9ad306b42ocseo212onkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWLPISoxA16n2PLqt9tLoKyP-FF2H_Ce0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650781237894:android:6a887c8c7e8ce16f",
+        "android_client_info": {
+          "package_name": "com.ashraf.mathskilltester"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "650781237894-c4v4kovcbmi9ad306b42ocseo212onkt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWLPISoxA16n2PLqt9tLoKyP-FF2H_Ce0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

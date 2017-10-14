@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#c6ff00"
+    tools:context="com.ashraf.mathskilltester.Game">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_rl">
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:paddingTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chance = 3"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:id="@+id/text_chance"/>
+
+
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:paddingTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total = 0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/text_total"/>
+
+
+
+    </RelativeLayout>
+    <TextView
+        android:layout_above="@+id/text_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:paddingBottom="20dp"
+        android:textColor="#ba68c8"
+        android:id="@+id/text_temp_show"/>
+    <TextView
+        android:layout_above="@+id/text_question"
+        android:textColor="#e91e63"
+        android:layout_marginBottom="50dp"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Time Left : 3 Sec"
+        android:id="@+id/text_time"/>
+
+
+
+        <TextView
+
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="7 * 7"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:background="#f4ff81"
+            android:textColor="#448aff"
+            android:id="@+id/text_question"
+            />
+    <TextView
+        android:layout_below="@+id/text_question"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="="
+        android:gravity="center"
+        android:textSize="50sp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/text_equal"/>
+
+    <EditText
+        android:layout_below="@+id/text_equal"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="#f4ff81"
+        android:textColor="#ba68c8"
+        android:id="@+id/edit_answer"
+        android:inputType="number"/>
+
+
+    <Button
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Skip"
+        android:background="#c6ff00"
+        android:textColor="#40c4ff"
+        android:id="@+id/button_skip"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:onClick="skip"
+        />
+
+
+</RelativeLayout>

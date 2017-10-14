@@ -1,0 +1,31 @@
+<resources>
+    <string name="banner_ad_unit_id">ca-app-pub-2122789248840144/9833468512</string>
+    <string name="app_name" >Math Skill Test</string>
+    <string name="beginner">Beginner</string>
+    <string name="intermediate">Intermediate</string>
+    <string name="expert">Expert</string>
+    <string name="extraordinary">Extraordinary</string>
+
+    <string name="instruction_point">
+
+        \tAdding (+) : 1 Point\n
+        Subtract (-) : 2 Point\n
+        Multiply (*) : 3 Point\n
+        Divide (/) : 4 Point\n
+
+
+    </string>
+    <string name="instruction_level">
+        Beginner      : 50 Point\n
+        Intermediate  : 70 Point\n
+        Expert        : 90 Point\n
+        Extraordinary : 150 Point\n
+
+    </string>
+
+    <string name="about_author">
+        Develop And Design By :  Ashraf Ullah\n
+        Email : ashraf789@diu.edu.bd\n
+
+    </string>
+</resources>

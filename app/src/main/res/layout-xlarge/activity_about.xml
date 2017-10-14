@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#a909fde5"
+    tools:context="com.ashraf.mathskilltester.About">
+
+
+    <TextView
+
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Math Skill Tester (MST)"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:id="@+id/text_meaning"
+        android:layout_marginBottom="10dp"
+        android:textColor="#ea80fc"
+        android:textSize="37sp"
+        />
+
+    <TextView
+
+        android:textColor="#6a1b9a"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/text_meaning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_instruction"
+        android:text="# Instruction #"
+        android:gravity="left"
+        android:textSize="35sp"
+        />
+
+
+        <TextView
+            android:layout_below="@+id/text_instruction"
+            android:textColor="#7b1fa2"
+            android:textStyle="italic"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_instruction_pointing"
+            android:text="Pointing System"
+            android:textSize="35sp"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_below="@+id/text_instruction_pointing"
+            android:textColor="#85751fd7"
+            android:textStyle="italic"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_instruction_pointing_brief"
+            android:text="@string/instruction_point"
+            android:gravity="center"
+            android:textSize="30sp"
+            />
+
+        <TextView
+
+            android:layout_below="@+id/text_instruction_pointing_brief"
+            android:textColor="#7b1fa2"
+            android:textStyle="italic"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_instruction_level_up"
+            android:text="Level Complete"
+            android:textSize="35sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_below="@+id/text_instruction_level_up"
+            android:textColor="#85751fd7"
+            android:textStyle="italic"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_instruction_level_up_brief"
+            android:text="@string/instruction_level"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:textSize="30sp"
+            />
+
+    <TextView
+
+        android:fontFamily="cursive"
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:textColor="#6a1b9a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_about_author"
+        android:text="@string/about_author"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="38sp"
+        />
+
+</RelativeLayout>
