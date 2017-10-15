@@ -1,5 +1,5 @@
 # Math-Skill-Tester-Game
-A Andorid Quize game 
+An Andorid Quiz game 
 
 </br>
 #screenshot
