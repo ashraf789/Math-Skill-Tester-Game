@@ -6,8 +6,7 @@ play store : https://play.google.com/store/apps/details?id=com.ashraf.mathskillt
 
 </br>
 </br>
-</br>
-<img src="https://i.imgur.com/Keb0x2O.png" />
+
 
 </br>
 <img src="https://i.imgur.com/X0Bv4AR.png" />
