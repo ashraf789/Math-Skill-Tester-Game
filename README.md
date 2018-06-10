@@ -21,3 +21,9 @@ play store : https://play.google.com/store/apps/details?id=com.ashraf.mathskillt
 </br>
 <img src="https://i.imgur.com/YYJqAYj.png" />
 </br>
+
+</br>
+
+## License
+This project is licensed under the MIT License - see the [License File](LICENSE) for details
+
