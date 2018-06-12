@@ -1,4 +1,4 @@
-package com.ashraf.mathskilltester;
+package com.ashraf.mathskilltest;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -7,80 +7,87 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Random;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
-import static android.R.attr.breadCrumbShortTitle;
-import static android.R.attr.id;
+import java.util.Random;
 
 public class Game extends AppCompatActivity {
 
-    // All Created Method
-    /*
-        public void startLevel(String level);
-        public void beginner();
-        public void intermediate();
-        public void expert();
-        public void extraordinary();
-        public void generateRandom;
-        public void generateInstruction();
-        public void setQuestion();
-        public void initialize();
-        public void checkAnswer();  after take answer set new total,chance etc
-        public void skip(View v)
-        public void subtractChance()
-        public void sleep(final int time)
-        public void timeRemain(final int time)
-    */
 
+    private TextView tvQuestion;
+    private TextView tvChance, tvTotal, tvTime, tvTemporary;
+    private EditText editAnswer;
+    private Random random = new Random();
+    private Button buttonSkip;
 
-    TextView tvQuestion;
-    TextView tvChance, tvTotal, tvTime, tvTemporary;
-    EditText editAnswer;
-    Random random = new Random();
-    Button buttonSkip;
+    private String userAnswer;
+    private int randomNumber1, randomNumber2, randomInstruction;
+    private int correctAnswer;
+    private int mTotal = 0, mChance = 3, temp = 0;
+    private int temporary;
 
-    String userAnswer;
-    int randomNumber1, randomNumber2, randomInstruction;
-    int correctAnswer;
-    int mTotal = 0, mChance = 3, temp = 0;
-    int temporary;
-
-    long wasteTime;
+    private long wasteTime;
     private String level = "0";
     private boolean flag;
-    boolean timeOut = false;
-    String status = "";
+    private boolean timeOut = false;
+    private String status = "";
 
-    Long previousTime;
-    Long currentTime;
-    Handler handler = new Handler();
+    private Long previousTime;
+    private Long currentTime;
+    private Handler handler = new Handler();
+    private Toolbar toolbar;
 
 
-    MediaPlayer mpRight,mpWrong,mpGameOver;
+    private MediaPlayer mpRight,mpWrong,mpGameOver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         initialize();
+        addInitialize();
+        setSupportActionBar(toolbar);
         level = getIntent().getStringExtra("level");
         mTotal += Integer.parseInt(getIntent().getStringExtra("total"));
         temporary = mTotal;
         startLevel(level);
 
+    }
+    // Initialize all
+    public void initialize() {
+        tvQuestion =  findViewById(R.id.text_question);
+        editAnswer =  findViewById(R.id.edit_answer);
+        tvChance =  findViewById(R.id.text_chance);
+        tvTotal =  findViewById(R.id.text_total);
+        tvTime =  findViewById(R.id.text_time);
+        tvTemporary =  findViewById(R.id.text_temp_show);
+        buttonSkip =  findViewById(R.id.button_skip);
+
+        mpRight = MediaPlayer.create(this,R.raw.right_02);
+        mpWrong = MediaPlayer.create(this,R.raw.wrong_ans_01);
+        mpGameOver = MediaPlayer.create(this,R.raw.game_over_01);
+
+        toolbar = findViewById(R.id.toolbar);
+    }
+
+    private void addInitialize() {
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     //start level
@@ -112,8 +119,6 @@ public class Game extends AppCompatActivity {
         setQuestion();
         timeRemain(8);
         takeAnswer();
-
-
     }
 
     //Intermediate Level
@@ -162,10 +167,7 @@ public class Game extends AppCompatActivity {
     // Generate Random Number
     public void generateRandom(int baseForRandom1, int baseForRandom2) {
 
-
         // used do while loop  because if random number == 0 then it generate again
-
-
         do {
             randomNumber1 = random.nextInt(baseForRandom1);
         } while (randomNumber1 == 0);
@@ -182,7 +184,6 @@ public class Game extends AppCompatActivity {
 
             }
         }
-
     }
 
     // Generate Random Instruction
@@ -215,7 +216,6 @@ public class Game extends AppCompatActivity {
     // Set Question
     public void setQuestion() {
 
-
         switch (randomInstruction) {
             case 1:
                 correctAnswer = randomNumber1 + randomNumber2;
@@ -240,13 +240,8 @@ public class Game extends AppCompatActivity {
 
             default:
                 break;
-
         }
-
-
         editAnswer.setText("");
-
-
     }
 
     private int lcm(int a, int b) {
@@ -264,21 +259,17 @@ public class Game extends AppCompatActivity {
 
     public void takeAnswer() {
 
-
         editAnswer.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 tvTemporary.setVisibility(View.VISIBLE);
                 tvTemporary.setText(charSequence);
                 editAnswer.setBackgroundColor(Color.parseColor("#f4ff81"));
-
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
             }
@@ -303,7 +294,6 @@ public class Game extends AppCompatActivity {
         });
 
     }
-
 
     // Change total,chance etc status
     public void checkAnswer() {
@@ -349,28 +339,10 @@ public class Game extends AppCompatActivity {
                 tvChance.setText("Game Over");
                 gameOver();
             }
-
-
         }
 
         levelChanger();
         startLevel(level);
-    }
-
-
-    // Initialize all
-    public void initialize() {
-        tvQuestion = (TextView) findViewById(R.id.text_question);
-        editAnswer = (EditText) findViewById(R.id.edit_answer);
-        tvChance = (TextView) findViewById(R.id.text_chance);
-        tvTotal = (TextView) findViewById(R.id.text_total);
-        tvTime = (TextView) findViewById(R.id.text_time);
-        tvTemporary = (TextView) findViewById(R.id.text_temp_show);
-        buttonSkip = (Button) findViewById(R.id.button_skip);
-
-        mpRight = MediaPlayer.create(this,R.raw.right_02);
-        mpWrong = MediaPlayer.create(this,R.raw.wrong_ans_01);
-        mpGameOver = MediaPlayer.create(this,R.raw.game_over_01);
     }
 
     // Swap Between Two Number
@@ -380,9 +352,6 @@ public class Game extends AppCompatActivity {
     }
 
     public void skip(View v) {
-
-
-
         changeFlag();
         mChance--;
         if (mChance < 0) {
@@ -395,20 +364,17 @@ public class Game extends AppCompatActivity {
             editAnswer.setFocusableInTouchMode(true);
             buttonSkip.setText("Skip");
             timeOut = false;
-
         }
 
         if (mChance > -1) {
 
             Toast.makeText(Game.this, "Chance Left : " + mChance, Toast.LENGTH_SHORT).show();
             tvChance.setText("Chance : " + mChance);
-
         }
 
         startLevel(level);
 
     }
-
     // if need sleep
     public void sleep(final int time, final String colorCode) {
 
@@ -528,26 +494,6 @@ public class Game extends AppCompatActivity {
         flag = false;
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.about,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-
-        switch (item.getItemId()){
-            case R.id.menu_about:
-                startActivity(new Intent(Game.this,About.class));
-                finish();
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     protected void onPause() {

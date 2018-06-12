@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ashraf.mathskilltester">
+    package="com.ashraf.mathskilltest">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -9,16 +9,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.ashraf.mathskilltest.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Game" />
-        <activity android:name=".Result" />
-        <activity android:name=".About" />
+        <activity android:name="com.ashraf.mathskilltest.Game" />
+        <activity android:name="com.ashraf.mathskilltest.Result" />
     </application>
 
 </manifest>

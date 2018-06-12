@@ -3,15 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#c6ff00"
-    tools:context="com.ashraf.mathskilltester.Game">
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_bg"
+    tools:context="com.ashraf.mathskilltest.Game">
 
-
+    <include layout="@layout/toolbar"></include>
     <RelativeLayout
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/layout_rl">
@@ -34,7 +33,7 @@
             android:paddingTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total = 0"
+            android:text="Score = 0"
             android:textSize="20sp"
             android:textStyle="bold"
             android:id="@+id/text_total"/>
@@ -65,18 +64,20 @@
 
 
 
-        <TextView
+    <TextView
 
-            android:layout_centerVertical="true"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="7 * 7"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:background="#f4ff81"
-            android:textColor="#448aff"
-            android:id="@+id/text_question"
-            />
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="7 * 7"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="#f4ff81"
+        android:textColor="#448aff"
+        android:id="@+id/text_question"
+        />
     <TextView
         android:layout_below="@+id/text_question"
         android:layout_width="wrap_content"
@@ -89,6 +90,8 @@
         android:id="@+id/text_equal"/>
 
     <EditText
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_below="@+id/text_equal"
         android:layout_centerVertical="true"
         android:layout_width="match_parent"
@@ -102,18 +105,26 @@
 
 
     <Button
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_above="@+id/adView"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:text="Skip"
-        android:background="#c6ff00"
-        android:textColor="#40c4ff"
+        android:background="@color/buttonBg"
+        android:textColor="@color/colorButtonText"
         android:id="@+id/button_skip"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:onClick="skip"
         />
-
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
 </RelativeLayout>

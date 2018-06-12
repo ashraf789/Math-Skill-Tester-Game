@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:background="#c6ff00"
-    tools:context="com.ashraf.mathskilltester.Result">
+    tools:context="com.ashraf.mathskilltest.Result">
 
-
+    <include layout="@layout/toolbar"></include>
     <TextView
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/textColor"
         android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +21,7 @@
         android:textStyle="bold"
         android:id="@+id/text_status"/>
     <TextView
+        android:textColor="@color/colorAccent"
         android:paddingTop="5dp"
         android:layout_below="@+id/text_status"
         android:layout_width="match_parent"
@@ -28,6 +32,7 @@
         android:textStyle="bold"
         android:id="@+id/text_level_complete"/>
     <TextView
+        android:textColor="@color/colorPrimaryDark"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_width="match_parent"
@@ -57,18 +62,20 @@
                 android:layout_alignParentLeft="true"
                 android:text="Home"
                 android:textAllCaps="false"
-                android:background="#c6ff00"
+                android:textColor="@color/textColor"
+                android:background="@color/buttonBg"
                 android:id="@+id/button_home"
                 android:onClick="home"/>
             <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="Next Level"
-            android:textAllCaps="false"
-            android:background="#c6ff00"
-            android:id="@+id/button_next"
-            android:onClick="next"/>
+                android:textColor="@color/textColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Next Level"
+                android:textAllCaps="false"
+                android:background="@color/buttonBg"
+                android:id="@+id/button_next"
+                android:onClick="next"/>
 
 
         </RelativeLayout>

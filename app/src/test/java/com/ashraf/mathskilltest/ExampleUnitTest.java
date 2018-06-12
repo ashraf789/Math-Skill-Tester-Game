@@ -1,4 +1,4 @@
-package com.ashraf.mathskilltester;
+package com.ashraf.mathskilltest;
 
 import org.junit.Test;
 

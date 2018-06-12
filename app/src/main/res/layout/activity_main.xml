@@ -6,63 +6,69 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
-    android:background="#00e5ff"
+    android:background="@color/colorPrimary"
     android:textDirection="firstStrong"
     android:textAlignment="center"
-    tools:context="com.ashraf.mathskilltester.MainActivity">
-    <RelativeLayout
+    tools:context="com.ashraf.mathskilltest.MainActivity">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center">
 
         <Button
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
             android:textAllCaps="false"
-            android:background="#dcedc8"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
+            android:background="@color/buttonBg"
+            android:textColor="@color/textColor"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="@string/beginner"
             android:id="@+id/btn_beginner"
             />
 
         <Button
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/btn_beginner"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
             android:textAllCaps="false"
-            android:background="#dcedc8"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
+            android:background="@color/buttonBg"
+            android:textColor="@color/textColor"
+
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="@string/intermediate"
             android:id="@+id/btn_intermediate"
             />
         <Button
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/btn_intermediate"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
             android:textAllCaps="false"
-            android:background="#dcedc8"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
+            android:background="@color/buttonBg"
+            android:textColor="@color/textColor"
+
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="@string/expert"
             android:id="@+id/btn_expert"
             />
         <Button
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/btn_expert"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
             android:textAllCaps="false"
-            android:background="#dcedc8"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
+            android:background="@color/buttonBg"
+            android:textColor="@color/textColor"
+
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="@string/extraordinary"
             android:id="@+id/btn_extraordinary"
             />
-    </RelativeLayout>
+    </LinearLayout>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
