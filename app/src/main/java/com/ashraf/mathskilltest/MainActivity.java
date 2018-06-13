@@ -21,23 +21,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private String  level = "0";
-    Button btnBeginner,btnIntermediate, btnExpert,btnExtraordinary;
+    private Button btnBeginner,btnIntermediate, btnExpert,btnExtraordinary;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addInitialize();
+//        addInitialize();
         initialize();
     }
 
-    private void addInitialize() {
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-    }
+//    private void addInitialize() {
+//        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
+//        AdView mAdView = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
+//    }
 
     @Override
     public void onClick(View v) {

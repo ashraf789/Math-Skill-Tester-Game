@@ -1,10 +1,13 @@
 package com.ashraf.mathskilltest;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -50,15 +53,17 @@ public class Game extends AppCompatActivity {
     private Handler handler = new Handler();
     private Toolbar toolbar;
 
-
     private MediaPlayer mpRight,mpWrong,mpGameOver;
+    private SavedData savedData;
+    private TextView bestScoreTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         initialize();
-        addInitialize();
+        initialSetupAllView();
+//        addInitialize();
         setSupportActionBar(toolbar);
         level = getIntent().getStringExtra("level");
         mTotal += Integer.parseInt(getIntent().getStringExtra("total"));
@@ -66,6 +71,11 @@ public class Game extends AppCompatActivity {
         startLevel(level);
 
     }
+
+    private void initialSetupAllView() {
+        bestScoreTv.setText(String.valueOf(savedData.getBestScore()));
+    }
+
     // Initialize all
     public void initialize() {
         tvQuestion =  findViewById(R.id.text_question);
@@ -81,14 +91,16 @@ public class Game extends AppCompatActivity {
         mpGameOver = MediaPlayer.create(this,R.raw.game_over_01);
 
         toolbar = findViewById(R.id.toolbar);
+        bestScoreTv = findViewById(R.id.bestScoreTv);
+        savedData = new SavedData(this);
     }
 
-    private void addInitialize() {
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-    }
+//    private void addInitialize() {
+//        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
+//        AdView mAdView = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
+//    }
 
     //start level
     public void startLevel(String level) {
@@ -160,8 +172,35 @@ public class Game extends AppCompatActivity {
         intent.putExtra("status", status);
         intent.putExtra("total", Integer.toString(mTotal));//convert integer to string
         intent.putExtra("level", level);
-        startActivity(intent);
-        finish();
+
+        int previousBestScore = savedData.getBestScore();
+
+        if (previousBestScore < mTotal){
+            savedData.saveBestScore(mTotal);
+            showDialog(intent);
+        }else {
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    public void showDialog(final Intent intent){
+        AlertDialog.Builder builder;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+        } else {
+            builder = new AlertDialog.Builder(this);
+        }
+        builder.setTitle("BEST SCORE")
+                .setMessage("Congratulations! you just broke your previous best score")
+                .setPositiveButton("CONTINUE", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .setIcon(R.drawable.congrate)
+                .show();
     }
 
     // Generate Random Number
@@ -487,22 +526,9 @@ public class Game extends AppCompatActivity {
         } else
             status = "unComplete";
 
-
     }
 
     public void changeFlag() {
         flag = false;
-    }
-
-
-    @Override
-    protected void onPause() {
-        //changeFlag();
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
     }
 }

@@ -18,13 +18,14 @@ public class Result extends AppCompatActivity {
 
     private String mStatus,mTotal="0",mLevel;
     boolean tryAgain = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
         initializeAll();
-        addIniTialiZe();
+//        addIniTialiZe();
 
         mStatus = getIntent().getStringExtra("status");
         mTotal = getIntent().getStringExtra("total");
@@ -73,20 +74,20 @@ public class Result extends AppCompatActivity {
         }
     }
 
-    private void addIniTialiZe() {
-        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-    }
+//    private void addIniTialiZe() {
+//        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
+//        AdView mAdView = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
+//
+//    }
     public void initializeAll(){
 
-        tvSetStatus = (TextView) findViewById(R.id.text_status);
-        tvSetLevel = (TextView) findViewById(R.id.text_level_complete);
-        tvSetTotal = (TextView) findViewById(R.id.text_total);
-        btnHome = (Button) findViewById(R.id.button_home);
-        btnNext = (Button) findViewById(R.id.button_next);
+        tvSetStatus =  findViewById(R.id.text_status);
+        tvSetLevel =  findViewById(R.id.text_level_complete);
+        tvSetTotal =  findViewById(R.id.text_total);
+        btnHome =  findViewById(R.id.button_home);
+        btnNext =  findViewById(R.id.button_next);
 
     }
 

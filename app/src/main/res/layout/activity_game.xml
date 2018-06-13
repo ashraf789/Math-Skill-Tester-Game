@@ -17,27 +17,49 @@
 
         <TextView
             android:layout_alignParentLeft="true"
-            android:paddingTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chance = 3"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="18sp"
             android:layout_gravity="center"
             android:id="@+id/text_chance"/>
-
-
-
         <TextView
             android:layout_alignParentRight="true"
-            android:paddingTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Score = 0"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="18sp"
             android:id="@+id/text_total"/>
 
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/text_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:textColor="@color/colorButtonText"
+                android:fontFamily="serif-monospace"
+                android:textSize="18sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Best Score = "/>
+            <TextView
+                android:id="@+id/bestScoreTv"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="20"/>
+        </LinearLayout>
 
 
     </RelativeLayout>
@@ -81,12 +103,11 @@
     <TextView
         android:layout_below="@+id/text_question"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="="
         android:gravity="center"
         android:textSize="50sp"
-        android:layout_marginBottom="10dp"
         android:id="@+id/text_equal"/>
 
     <EditText
@@ -105,8 +126,7 @@
 
 
     <Button
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_above="@+id/adView"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -118,13 +138,14 @@
         android:textStyle="bold"
         android:onClick="skip"
         />
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id">
-    </com.google.android.gms.ads.AdView>
+    <!--<com.google.android.gms.ads.AdView-->
+        <!--android:id="@+id/adView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--ads:adSize="BANNER"-->
+        <!--ads:adUnitId="@string/banner_ad_unit_id">-->
+    <!--</com.google.android.gms.ads.AdView>-->
+    <!---->
 </RelativeLayout>
