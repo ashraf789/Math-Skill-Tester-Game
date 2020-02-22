@@ -1,8 +1,10 @@
 # Math-Skill-Tester-Game
-An Andorid Quiz game 
-play store : https://play.google.com/store/apps/details?id=com.ashraf.mathskilltest
+An Andorid Quiz game, Developed at 2016. 
 </br>
-#screenshot
+Play store link: https://play.google.com/store/apps/details?id=com.ashraf.mathskilltest
+
+</br>
+#Screenshot
 
 </br>
 </br>
