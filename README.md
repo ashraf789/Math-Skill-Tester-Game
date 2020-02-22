@@ -1,5 +1,5 @@
 # Math-Skill-Tester-Game
-An Andorid Quiz game, Developed at 2016. 
+An Andorid Quiz game, First Developed in 2016. 
 </br>
 Play store link: https://play.google.com/store/apps/details?id=com.ashraf.mathskilltest
 
