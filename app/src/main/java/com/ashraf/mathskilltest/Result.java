@@ -23,7 +23,6 @@ public class Result extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         initializeAll();
-//        addIniTialiZe();
 
         mStatus = getIntent().getStringExtra("status");
         mTotal = getIntent().getStringExtra("total");
@@ -32,7 +31,7 @@ public class Result extends AppCompatActivity {
         tvSetStatus.setText("Congratulation You Passed");
         tvSetTotal.setText("Total Point : "+mTotal);
 
-
+        if (mStatus == null) return;
         switch (mStatus){
 
             case "unComplete":
@@ -72,13 +71,6 @@ public class Result extends AppCompatActivity {
         }
     }
 
-//    private void addIniTialiZe() {
-//        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
-//        AdView mAdView = (AdView) findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
-//
-//    }
     public void initializeAll(){
 
         tvSetStatus =  findViewById(R.id.text_status);

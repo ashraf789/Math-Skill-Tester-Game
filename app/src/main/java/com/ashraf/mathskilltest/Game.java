@@ -60,7 +60,6 @@ public class Game extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         initialize();
         initialSetupAllView();
-//        addInitialize();
         setSupportActionBar(toolbar);
         level = getIntent().getStringExtra("level");
         mTotal += Integer.parseInt(getIntent().getStringExtra("total"));
@@ -83,21 +82,14 @@ public class Game extends AppCompatActivity {
         tvTemporary =  findViewById(R.id.text_temp_show);
         buttonSkip =  findViewById(R.id.button_skip);
 
-        mpRight = MediaPlayer.create(this,R.raw.right_02);
-        mpWrong = MediaPlayer.create(this,R.raw.wrong_ans_01);
-        mpGameOver = MediaPlayer.create(this,R.raw.game_over_01);
+        mpRight = MediaPlayer.create(Game.this,R.raw.right_02);
+        mpWrong = MediaPlayer.create(Game.this,R.raw.wrong_ans_01);
+        mpGameOver = MediaPlayer.create(Game.this,R.raw.game_over_01);
 
         toolbar = findViewById(R.id.toolbar);
         bestScoreTv = findViewById(R.id.bestScoreTv);
         savedData = new SavedData(this);
     }
-
-//    private void addInitialize() {
-//        MobileAds.initialize(getApplicationContext(), "ca-app-pub-2122789248840144~6880002112");
-//        AdView mAdView = (AdView) findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
-//    }
 
     //start level
     public void startLevel(String level) {
