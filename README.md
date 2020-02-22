@@ -11,17 +11,17 @@ Play store link: https://play.google.com/store/apps/details?id=com.ashraf.mathsk
 
 
 </br>
-<img src="https://i.imgur.com/X0Bv4AR.png" />
+<img height='500' width ='300' src="https://i.imgur.com/X0Bv4AR.png" />
 
 </br>
-<img src="https://i.imgur.com/jP5LXVA.png" />
+<img height='500' width ='300' src="https://i.imgur.com/jP5LXVA.png" />
 
 </br>
-<img src="https://i.imgur.com/3cF6oxF.png" />
+<img height='500' width ='300' src="https://i.imgur.com/3cF6oxF.png" />
 </br>
-<img src="https://i.imgur.com/776raTk.png" />
+<img height='500' width ='300' src="https://i.imgur.com/776raTk.png" />
 </br>
-<img src="https://i.imgur.com/YYJqAYj.png" />
+<img height='500' width ='300' src="https://i.imgur.com/YYJqAYj.png" />
 </br>
 
 </br>
