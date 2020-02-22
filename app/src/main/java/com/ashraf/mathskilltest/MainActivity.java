@@ -8,14 +8,12 @@ package com.ashraf.mathskilltest;
  * Email : ashraf789@diu.edu.bd
  * */
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -68,10 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // initialize all
     public void initialize(){
-        btnBeginner = (Button) findViewById(R.id.btn_beginner);
-        btnIntermediate = (Button) findViewById(R.id.btn_intermediate);
-        btnExpert = (Button) findViewById(R.id.btn_expert);
-        btnExtraordinary = (Button) findViewById(R.id.btn_extraordinary);
+        btnBeginner =  findViewById(R.id.btn_beginner);
+        btnIntermediate =  findViewById(R.id.btn_intermediate);
+        btnExpert =  findViewById(R.id.btn_expert);
+        btnExtraordinary =  findViewById(R.id.btn_extraordinary);
 
         btnBeginner.setOnClickListener(this);
         btnIntermediate.setOnClickListener(this);
